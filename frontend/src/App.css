@@ -1,0 +1,86 @@
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Bold.ttf');
+	font-weight: 700;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Medium.ttf');
+	font-weight: 500;
+}
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/CentraNo2-Book.ttf');
+	font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+  background-color: #121212 !important;
+  color: #fff !important;
+  font-family: 'Centra', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+form {
+  display: inline-block;
+}
+
+h2 {
+  color: #B8B8B8;
+}
+
+p.success {
+	color: green;
+}
+
+p.danger {
+	color: red;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+.background-image-right {
+  top: 28%;
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  z-index: -4;
+}
+
+
+section:nth-child() {
+
+}
