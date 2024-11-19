@@ -42,11 +42,14 @@ export const Skills = () => {
             <button  style={{ marginTop : "20px" , marginBottom : "20px"}} className = "pass" onClick={handleAddSkills}>Add Skill</button>
             {
         skills.map((project, card) => (
-          <div  key={card}>
-              title={project.title}
-              icon={project.icon}
-            </div>
+          <div className="skills-grid">
+          <div className="skill-item">
+            <img src={project.icon} alt="React" />
+            <h5>{project.title}</h5>
+          </div>
+          </div>
           ))}
+
         </div>
 
       )

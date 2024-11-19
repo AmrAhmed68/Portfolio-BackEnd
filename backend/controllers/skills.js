@@ -2,14 +2,11 @@ const express = require('express');
 const router = express.Router();
 const Skills = require('../models/skills');
 
-router.get('/skills', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    console.log('Fetching skills...');
     const skill = await Skills.find();
-    console.log('Fetched skills:', skill);
     res.json(skill);
   } catch (error) {
-    console.error('Error fetching skills:', error.message || error);
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 });

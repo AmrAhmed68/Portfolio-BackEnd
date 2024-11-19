@@ -7,11 +7,12 @@
 }
 
 .skill {
+  background-color: #042630;
     padding: 0 0 50px 0;
     position: relative;
   }
   .skill-bx {
-    background: #151515;
+    background: #4c7273;
     border-radius: 64px;
     text-align: center;
     padding: 60px 50px;
@@ -49,7 +50,7 @@
   }
   
   .skills-grid {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: 50px;
     margin-top: 30px;

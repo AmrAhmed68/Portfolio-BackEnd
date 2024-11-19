@@ -22,7 +22,7 @@ app.use(
 
 app.use("/api", adminRoutes);
 app.use("/api", projectRoutes);
-app.use("/api", skillsRoutes);
+app.use("/", skillsRoutes);
 
 mongoose
   .connect(process.env.MONGO_URL, {

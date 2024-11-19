@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const API_URL_PROJECT = 'http://localhost:8000/api/project';
-const API_URL_SKILLS = 'http://localhost:8000/api/skills';
+const API_URL_SKILLS = 'http://localhost:8000/skills';
+const API_URL_SKILL = 'http://localhost:8000/';
 
 export const getProject = async () => {
   const response = await axios.get(API_URL_PROJECT);
@@ -31,7 +32,7 @@ export const deleteProject = async (id) => {
 // API To Skills 
 
 export const getSkills = async () => {
-  const response = await axios.get(API_URL_SKILLS);
+  const response = await axios.get(API_URL_SKILL);
   return response.data;
 };
 

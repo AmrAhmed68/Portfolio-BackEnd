@@ -1,5 +1,3 @@
-
-
 .slider-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -30,6 +28,7 @@
 
   .slider-item {
       width: calc(95% / 4);
+      margin-bottom: 10px;
       scroll-snap-align: start;
       text-align: center;
   }
@@ -107,8 +106,8 @@
   }
   
   .banner1 {
+    background-color: #042630;
     padding: 20px 0 227px 0;
-    background-image: url('../../assets/img/banner-bg.png');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;

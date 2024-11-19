@@ -1,7 +1,6 @@
 import './Projects.css'
 import { Container, Row, Col, Tab } from "react-bootstrap";
 import { ProjectCard } from "../ProjectCard/ProjectCard";
-import colorSharp2 from "../../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { useState, useEffect } from 'react';
@@ -71,7 +70,6 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="Background" />
     </section>
   );
 }

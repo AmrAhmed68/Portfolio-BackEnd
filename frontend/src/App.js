@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Router, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './components/Admin/Login';
 import { MainContent } from "./components/MainContent";    

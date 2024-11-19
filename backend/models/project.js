@@ -22,8 +22,7 @@ const projectSchema = new mongoose.Schema({
         require : true
     }],
     video : {
-        type : String,
-        require : true
+        type : String
     },
     demo : {
         type : String,

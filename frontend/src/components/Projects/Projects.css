@@ -2,7 +2,8 @@
 .project {
     padding: 80px 0;
     position: relative;
-    background-color: black;
+    background-color: #041421;
+
   }
   .project h2 {
       font-size: 45px;
@@ -47,7 +48,7 @@
       position: absolute;
       width: 0;
       height: 100%;
-      background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+      background:#041421;
       top: 0;
       left: 0;
       z-index: -1;
@@ -78,23 +79,4 @@
     width: 40%;
     z-index: -4;
   }
-  @media (min-width:1700px) {
-    main .container {
-      max-width: 100%;
-      padding: 0 150px;
-    }nav.navbar .navbar-nav .nav-link.navbar-link {
-      font-weight: 400;
-      color: #fff !important;
-      letter-spacing: 0.8px;
-      padding: 0 25px;
-      font-size: 18px;
-      opacity: 0.75;
-    }
-  }
-/* .background-image-left {
-    top: 28%;
-    position: absolute;
-    bottom: 0;
-    width: 40%;
-    z-index: -4;
-  } */
+  
