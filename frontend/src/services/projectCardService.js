@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-const API_URL_PROJECT = 'http://localhost:8000/api/project';
-const API_URL_SKILLS = 'http://localhost:8000/skills';
-const API_URL_SKILL = 'http://localhost:8000/';
+const API_URL = process.env.REACT_APP_API_URL;
+
+const API_URL_PROJECT = `${API_URL}/api/project`
+const API_URL_SKILLS = `${API_URL}/skills`
+const API_URL_SKILL = `${API_URL}/`
 
 export const getProject = async () => {
   const response = await axios.get(API_URL_PROJECT);
