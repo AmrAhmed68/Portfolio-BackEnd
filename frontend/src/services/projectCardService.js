@@ -2,31 +2,57 @@ import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-const API_URL_PROJECTs = `${API_URL}/project`
-const API_URL_PROJECT = `${API_URL}/:id`
-const API_URL_SKILLS = `${API_URL}/`
+const API_URL_PROJECT = `${API_URL}/project`
+const API_URL_PROJECTID = `${API_URL}/`
+const API_URL_SKILLS = `${API_URL}/skill`
 
 export const getProject = async () => {
-  const response = await axios.get(API_URL_PROJECTs);
+  const token = localStorage.getItem("token"); 
+  const response = await axios.get(API_URL_PROJECT , {
+    headers: {
+      Authorization: `Bearer ${token}`, 
+    },
+  });
   return response.data;
 };
 
 export const getProjectById = async (id) => {
-  const response = await axios.get(API_URL_PROJECT);
+  const token = localStorage.getItem("token");
+  const response = await axios.get(API_URL_PROJECTID , {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      },
+  });
   return response.data;
 };
 
 export const addProject = async (project) => {
-  const response = await axios.post(API_URL_PROJECT, project);
+  const token = localStorage.getItem("token");
+  const response = await axios.post(API_URL_PROJECT, project ,{
+    headers: {
+      Authorization: `Bearer ${token}`,
+      },
+  });
   return response.data;
 };
 
 export const getSkills = async () => {
-  const response = await axios.get(API_URL_SKILLS);
+  const token = localStorage.getItem("token")
+  const response = await axios.get(API_URL_SKILLS , {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      },
+  });
   return response.data;
 };
 
+
 export const addSkills = async (skills) => {
-  const response = await axios.post(API_URL_SKILLS, skills);
+  const token = localStorage.getItem("token")
+  const response = await axios.post(API_URL_SKILLS, skills , {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      },
+  });
   return response.data;
 };

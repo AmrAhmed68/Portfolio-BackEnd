@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/skills' , async (req , res) => {
+router.post('/skill' , async (req , res) => {
     
     const skills = new Skills ({
         title : req.body.title,
