@@ -5,6 +5,7 @@ const API_URL = process.env.REACT_APP_API_URL;
 const API_URL_PROJECT = `${API_URL}/api/project`
 const API_URL_PROJECTID = `${API_URL}/api/`
 const API_URL_SKILLS = `${API_URL}/api/skill`
+const API_URL_SKILL = `${API_URL}/api/`
 
 export const getProject = async () => {
   const response = await axios.get(API_URL_PROJECT);
@@ -22,7 +23,7 @@ export const addProject = async (project) => {
 };
 
 export const getSkills = async () => {
-  const response = await axios.get(API_URL_SKILLS);
+  const response = await axios.get(API_URL_SKILL);
   return response.data;
 };
 
