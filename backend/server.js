@@ -4,7 +4,6 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 app.use(express.json());
-const jwt = require("jsonwebtoken"); 
 
 const adminRoutes = require("./controllers/admin");
 const projectRoutes = require("./controllers/project");
@@ -21,27 +20,12 @@ app.use(
   })
 );
 
-const authenticate = (req, res, next) => {
-  const token = req.headers.authorization?.split(" ")[1];
-  if (!token) {
-    return res.status(401).json({ message: "Unauthorized: No token provided" });
-  }
-
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET); 
-    req.user = decoded; 
-    next();
-  } catch (error) {
-    return res.status(401).json({ message: "Unauthorized: Invalid token" });
-  }
-};
-
-app.use("/api", authenticate ,  adminRoutes  );
-app.use("/api", projectRoutes , authenticate);
-app.use("/api", skillsRoutes , authenticate );
+app.use("/api" ,  adminRoutes  );
+app.use("/api", projectRoutes );
+app.use("/api", skillsRoutes  );
 
 
-app.use("/secure-route", authenticate , (req, res) => {
+app.use("/secure-route" , (req, res) => {
   res.json({ message: "You have access!" });
 });
 
