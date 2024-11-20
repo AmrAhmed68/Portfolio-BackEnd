@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-const API_URL_PROJECT = `${API_URL}/project`
-const API_URL_PROJECTID = `${API_URL}/`
-const API_URL_SKILLS = `${API_URL}/skill`
+const API_URL_PROJECT = `${API_URL}/api/project`
+const API_URL_PROJECTID = `${API_URL}/api/`
+const API_URL_SKILLS = `${API_URL}/api/skill`
 
 export const getProject = async () => {
   const token = localStorage.getItem("token"); 
