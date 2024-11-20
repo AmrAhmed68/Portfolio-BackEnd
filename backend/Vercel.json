@@ -7,7 +7,7 @@
     {
       "src": "/(.*)",
       "headers": {
-        "Access-Control-Allow-Origin": "https://portfolio-back-end-rust.vercel.app",
+        "Access-Control-Allow-Origin": "https://portfolio-seven-opal-43.vercel.app/",
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
         "Access-Control-Allow-Headers": "Content-Type, Authorization"
       },
