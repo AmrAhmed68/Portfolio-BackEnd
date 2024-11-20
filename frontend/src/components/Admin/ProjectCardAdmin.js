@@ -19,7 +19,7 @@ export const ProjectCards = () => {
         ...prev,
         imageUrl: [...prev.imageUrl, imageUrlInput],
       }));
-      setImageUrlInput(''); // Clear the input field
+      setImageUrlInput('');
     }
   };
 
@@ -40,11 +40,6 @@ export const ProjectCards = () => {
     setProject([...project, addedProject]);
     setNewProject({ title: '', description: '', imageUrl: [], Hedimage: '' , demo: '' , video: ''  , github: '' , details: '' });
   };
-
-  // const handleDeleteCard = async (id) => {
-  //   await deleteProject(id);
-  //   setProject(project.filter((card) => card._id !== id));
-  // };
 
   return (
     <div className='AAAAA'>

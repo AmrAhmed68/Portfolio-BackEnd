@@ -10,25 +10,6 @@ export const Pages = () => {
     const [zoomedImage, setZoomedImage] = useState(null);
     console.log(id)
 
-    // useEffect(() => {
-    //     const fetchProject = async () => {
-    //     try {
-    //       const data = await getProjectById(id);
-    //       console.log("API Response:", data);
-    //       if (Array.isArray(data) && data.length > 0) {
-    //         setProject(data[0]); 
-    //       } else {
-    //         console.error("Unexpected API response format", data);
-    //         setError("Unexpected data format from API");
-    //       }
-    //     } catch (err) {
-    //         console.error("Error fetching project data", err);
-    //       setError("Could not load project details.");
-    //     }
-    //   };
-    //   fetchProject();
-    // }, [id]);
-
     useEffect(() => {
       const fetchProject = async () => {
         try {
