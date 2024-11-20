@@ -1,6 +1,6 @@
 import './Admin.css'
 import React, { useState, useEffect } from 'react';
-import { addProject, getProject, deleteProject } from '../../services/projectCardService';
+import { addProject, getProject } from '../../services/projectCardService';
 import { ProjectCard } from "../ProjectCard/ProjectCard";
 
 export const ProjectCards = () => {
@@ -41,10 +41,10 @@ export const ProjectCards = () => {
     setNewProject({ title: '', description: '', imageUrl: [], Hedimage: '' , demo: '' , video: ''  , github: '' , details: '' });
   };
 
-  const handleDeleteCard = async (id) => {
-    await deleteProject(id);
-    setProject(project.filter((card) => card._id !== id));
-  };
+  // const handleDeleteCard = async (id) => {
+  //   await deleteProject(id);
+  //   setProject(project.filter((card) => card._id !== id));
+  // };
 
   return (
     <div className='AAAAA'>
@@ -122,7 +122,7 @@ export const ProjectCards = () => {
               Hedimage={project.Hedimage}
               link={project.link}
             />
-            <button style={{ marginTop : "20px" , marginBottom : "20px"}} className = "pass" onClick={() => handleDeleteCard(card._id)}>Delete</button>
+            {/* <button style={{ marginTop : "20px" , marginBottom : "20px"}} className = "pass" onClick={() => handleDeleteCard(card._id)}>Delete</button> */}
             </div>
           ))}
           </div>
