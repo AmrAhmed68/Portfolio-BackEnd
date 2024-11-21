@@ -11,10 +11,16 @@ const skillsRoutes = require("./controllers/skills");
 
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://portfolio-seven-opal-43.vercel.app"], 
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 
-app.use("/api" ,  adminRoutes );
-app.use("/api", projectRoutes);
+app.use("/api" , adminRoutes  );
+app.use("/api", projectRoutes );
 app.use("/api", skillsRoutes  );
 
 mongoose
