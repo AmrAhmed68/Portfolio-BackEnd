@@ -11,14 +11,35 @@ const skillsRoutes = require("./controllers/skills");
 
 const PORT = process.env.PORT || 5000;
 
+const allowedOrigins = [
+  "https://portfolio-seven-opal-43.vercel.app",
+  "http://localhost:3000", 
+];
+
 app.use(
   cors({
-    origin: "https://portfolio-seven-opal-43.vercel.app", 
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
   })
 );
+
+
+// app.use(
+//   cors({
+//     origin: "https://portfolio-seven-opal-43.vercel.app", 
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"],
+//     credentials: true,
+//   })
+// );
 
 app.use("/api" ,  adminRoutes  );
 app.use("/api", projectRoutes );
