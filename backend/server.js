@@ -11,40 +11,18 @@ const skillsRoutes = require("./controllers/skills");
 
 const PORT = process.env.PORT || 5000;
 
-// app.use(
-//   cors({
-//     origin: ["https://portfolio-seven-opal-43.vercel.app"], 
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: ["https://portfolio-seven-opal-43.vercel.app"], 
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 
-const allowCors = fn => async (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  );
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-  return await fn(req, res);
-};
-
-// Custom handler
-const handler = (req, res) => {
-  const d = new Date();
-  res.end(d.toString());
-};
-
-// Use the CORS middleware
-app.use((req, res, next) => allowCors(handler)(req, res, next));
-
-app.use("/api" ,  adminRoutes , handler );
-app.use("/api", projectRoutes , handler );
-app.use("/api", skillsRoutes  , handler );
+app.use("/api" ,  adminRoutes  );
+app.use("/api", projectRoutes );
+app.use("/api", skillsRoutes  );
 
 mongoose
   .connect(process.env.MONGO_URL, {
