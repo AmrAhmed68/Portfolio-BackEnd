@@ -1,11 +1,15 @@
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
 
-const API_URL_PROJECT = `${API_URL}/api/project`
-const API_URL_PROJECTID = `${API_URL}/api/`
-const API_URL_SKILLS = `${API_URL}/api/skill`
-const API_URL_SKILL = `${API_URL}/api/`
+// const API_URL_PROJECT = `${API_URL}/api/project`
+// const API_URL_PROJECTID = `${API_URL}/api/`
+// const API_URL_SKILLS = `${API_URL}/api/skill`
+// const API_URL_SKILL = `${API_URL}/api/`
+const API_URL_PROJECT = "https://amrahmed68-8zvpotx0c-amrahmed68s-projects.vercel.app/api/project"
+const API_URL_PROJECTID = "https://amrahmed68-8zvpotx0c-amrahmed68s-projects.vercel.app/api/"
+const API_URL_SKILLS = "https://amrahmed68-8zvpotx0c-amrahmed68s-projects.vercel.app/api/skill"
+const API_URL_SKILL = "https://amrahmed68-8zvpotx0c-amrahmed68s-projects.vercel.app/api/"
 
 export const getProject = async () => {
   const response = await axios.get(API_URL_PROJECT);

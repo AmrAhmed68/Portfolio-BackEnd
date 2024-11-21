@@ -50,7 +50,7 @@ export const Contact = () => {
             </form>
           </Col>
 
-          <Col style={{ marginLeft : "60px" }}>
+          <Col style={{ marginLeft : "40px" }}>
                 <div>
                 <h2 style={{marginTop : "60px"}}>Get In Touch</h2>
                       <div className="AA">
