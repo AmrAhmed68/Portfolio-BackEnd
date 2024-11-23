@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ["https://portfolio-seven-opal-43.vercel.app"], 
+    origin: ["*"], 
     methods: ["GET", "POST"],
     credentials: true,
   })
