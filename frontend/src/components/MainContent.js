@@ -4,7 +4,6 @@ import { Projects } from "./Projects/Projects";
 import { Contact } from "./Contact/Contact";
 import { NavBar } from "./NavBar/NavBar";
 
-
 export const MainContent = () => {
     return(
         <div>
