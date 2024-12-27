@@ -18,7 +18,7 @@ export const getProject = async () => {
 };
 
 export const getProjectById = async (id) => {
-  const response = await axios.get(`${API_URL_PROJECTID}/${id}` ,{
+  const response = await axios.get(`${API_URL_PROJECTID}${id}`,{
   withCredentials : true ,
   headers: {
     'Content-Type': 'application/json' }});
