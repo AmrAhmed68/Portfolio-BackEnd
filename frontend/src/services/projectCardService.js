@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = ""
+const API_URL = "https://backend-six-gray-30.vercel.app"
 
 axios.defaults.withCredentials = true;
 
