@@ -5,16 +5,25 @@ import { getSkills  } from '../../services/projectCardService';
 
 export const Skills = () => {
   const [skills, setSkills] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchSkills();
   }, []);
 
   const fetchSkills = async () => {
-    const data = await getSkills();
+    const data = await getSkills(setLoading);
     setSkills(data);
   };
 
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading...</p>
+      </div>
+    );
+  }
   return (
     <section className="skill" id="skills">
       <div className="container">

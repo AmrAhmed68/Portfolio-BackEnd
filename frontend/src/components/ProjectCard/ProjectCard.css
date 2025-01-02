@@ -11,13 +11,16 @@
     padding: 18px 34px;
     font-size: 18px;
     margin-left: 18px;
-      position: relative;
-      background-color: transparent;
-      transition: 0.3s ease-in-out;
+    margin-top: 20px;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
     z-index: 1;
+    border-radius: 15px;
   }
   .pass:hover{
     color:#121212;
+    border-radius: 15px;
   }
   
   .pass::before{
@@ -30,12 +33,14 @@
     top: 0;
     z-index: -1;
     transition: 0.3s ease-in-out;
+    border-radius: 15px;
   }
   .pass:hover::before{
     content: "";
       width: 100%;
       height: 100%;
       position: absolute;
+      border-radius: 15px;
   }
 
   .proj-imgbx {

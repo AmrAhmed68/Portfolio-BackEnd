@@ -10,6 +10,8 @@ export const Projects = () => {
 
   const [error, setError] = useState(null);
   const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(false);
+
 
   useEffect(() => {
     fetchProjectCards();
@@ -17,7 +19,7 @@ export const Projects = () => {
   
   const fetchProjectCards = async () => {
     try{
-      const data = await getProject();
+      const data = await getProject(setLoading);
       setProjects(data);
       if (Array.isArray(data)) {
         setProjects(data); 
@@ -30,6 +32,15 @@ export const Projects = () => {
       setError("Could not load projects.");
     }
   };
+
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Loading...</p>
+      </div>
+    );
+  } 
 
   return (
     <section className="project" id="projects">

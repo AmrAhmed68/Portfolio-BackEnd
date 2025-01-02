@@ -6,8 +6,9 @@ import { ProjectCard } from "../ProjectCard/ProjectCard";
 export const ProjectCards = () => {
 
   const [imageUrlInput, setImageUrlInput] = useState('');
+  const [skillsUrlInput, setSkillsUrlInput] = useState('');
   const [project, setProject] = useState([]);
-  const [newProject, setNewProject] = useState({ title: '', description: '', imageUrl: [], Hedimage: '' , demo: '' , video: ''  , github: '' , details: '' });
+  const [newProject, setNewProject] = useState({ title: '', description: '', skills: [] , imageUrl: [], Hedimage: '' , demo: '' , video: ''  , github: '' , details: '' });
 
   useEffect(() => {
     fetchProject();
@@ -23,10 +24,27 @@ export const ProjectCards = () => {
     }
   };
 
+  const handleAddSkillsUrl = () => {
+    if (skillsUrlInput.trim()) {
+      setNewProject((prev) => ({
+        ...prev,
+        skills: [...prev.skills, skillsUrlInput],
+      }));
+      setSkillsUrlInput('');
+    }
+  };
+
   const handleRemoveImageUrl = (index) => {
     setNewProject((prev) => ({
       ...prev,
       imageUrl: prev.imageUrl.filter((_, i) => i !== index),
+    }));
+  };
+
+  const handleRemoveSkillsUrl = (index) => {
+    setNewProject((prev) => ({
+      ...prev,
+      skills: prev.skills.filter((_, i) => i !== index),
     }));
   };
 
@@ -87,7 +105,7 @@ export const ProjectCards = () => {
           value={newProject.demo}
           onChange={(e) => setNewProject({ ...newProject, demo: e.target.value })}
         />
-          <input style={{ marginTop : "20px" , marginBottom : "20px"}}
+          <input style={{ marginTop : "20px" , marginBottom : "20px" }}
             type="text"
             placeholder="Add Image URL"
             value={imageUrlInput}
@@ -101,6 +119,24 @@ export const ProjectCards = () => {
             <li key={index}>
               {url}
               <button className = "pass" onClick={() => handleRemoveImageUrl(index)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+
+          <input style={{ marginTop : "20px" , marginBottom : "20px" }}
+            type="text"
+            placeholder="Add skills URL"
+            value={skillsUrlInput}
+            onChange={(e) => setSkillsUrlInput(e.target.value)}
+          />
+
+          <button className = "pass" onClick={handleAddSkillsUrl}>Add URL</button>
+
+        <ul>
+          {newProject.skills.map((url, index) => (
+            <li key={index}>
+              {url}
+              <button className = "pass" onClick={() => handleRemoveSkillsUrl(index)}>Remove</button>
             </li>
           ))}
         </ul>
