@@ -8,7 +8,7 @@ export const Banner = () => {
   
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = `${process.env.PUBLIC_URL}/My_CV.pdf`;
+    link.href = `${process.env.PUBLIC_URL}/Amr_AboBakr_CV.pdf`;
     link.download = 'My_CV.pdf';
     link.click();
   };
